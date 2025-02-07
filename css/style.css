@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", serif;
+    box-sizing: border-box;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+
+    margin-bottom: 0;
+}
+
+:root {
+    --main: #A435F0;
+    --black: #161616;
+    --white: #f1f1f1;
+    --hover: #7016ac;
+}
+
+body {
+    background: var(--white);
+}
+
+/* ============================ Home Page CSS Start ============================ */
+.main {
+    height: 100vh;
+}
+
+.content h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.content h1 span {
+    color: var(--main);
+}
+
+.content>p {
+    max-width: 636px;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--black);
+    margin: 12px 0 28px;
+}
+
+.content button {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    color: var(--white);
+    background: var(--main);
+    border: none;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+.content button:hover {
+    background: var(--hover);
+}
+
+/* ============================ Home Page CSS End ============================ */
+
+
+/* ============================ Party Details Page CSS Start ============================ */
+#partyDetails {
+    display: none;
+    height: 100vh;
+    background: url(../assets/bg.svg) no-repeat center;
+}
+
+.party-content {
+    row-gap: 40px;
+}
+
+.party-text-main {
+    height: 100vh;
+}
+
+#partyDetails h1 {
+    width: 258px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #472A6A;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #472A6A;
+    margin: 0 auto 68px;
+
+}
+
+#partyDetails .text h4 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5C407B;
+    margin-bottom: 10px;
+}
+
+#partyDetails .text p {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.angleBtn {
+    width: 82px;
+    height: 82px;
+    color: var(--white);
+    background: #9F70FD;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    margin: 68px auto 0;
+    flex-shrink: 0;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+.angleBtn:hover {
+    background: #8755e9;
+}
+
+.angleBtn i {
+    font-size: 40px;
+}
+
+/* ============================ Party Details Page CSS End ============================ */
+
+
+/* ============================ info Page CSS Start ============================ */
+#info {
+    display: none;
+}
+
+#info .info-content {
+    height: 100vh;
+}
+
+.infoBox {
+    padding: 88px 56px;
+    background: linear-gradient(57deg, #8E2DE2 9.83%, rgba(74, 0, 224, 0.95) 90.17%);
+    -webkit-border-radius: 55px;
+    -moz-border-radius: 55px;
+    -ms-border-radius: 55px;
+    -o-border-radius: 55px;
+    border-radius: 55px;
+}
+
+.infoBox h2 {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 55px;
+}
+
+.infoBox input {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 15px 20px;
+    margin-bottom: 35px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid #B6B6B6;
+}
+
+.infoBox input::placeholder {
+    color: var(--white);
+}
+
+.infoBox textarea {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    min-height: 128px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    padding: 15px 28px;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid #B6B6B6;
+}
+
+.infoBox textarea::placeholder {
+    color: var(--white);
+}
+
+.infoBox button {
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--main);
+    margin-top: 35px;
+    padding: 10px 0;
+    border: none;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+.infoBox button:hover {
+    background: #d3d3d3;
+}
+
+/* ============================ info Page CSS End ============================ */
+
+/* ============================ Choice Page CSS Start ============================ */
+#choice {
+    display: none;
+}
+
+#choice .choiceMain {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#choice .choiceMain h1 {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--main);
+    margin-bottom: 70px;
+}
+
+#choice .choiceCard {
+    border-radius: 30px;
+    text-align: center;
+    background: var(--Gradient, linear-gradient(90deg, #8E2DE2 0%, #4A00E0 100%));
+    padding-bottom: 30px;
+    /* flex-shrink: 0; */
+}
+
+#choice .choiceCard .cardImgTwo {
+    margin-top: 22px;
+}
+
+#choice .choiceCard p {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--white);
+    margin-top: 30px;
+}
+
+#choice .choiceCard p:last-child {
+    margin-top: 20px;
+}
+
+/* ============================ Choice Page CSS End ============================ */
+
+
+/* ============================ Payment Page CSS Start ============================ */
+#payment {
+    display: none;
+}
+
+#payment .paymentMain {
+    height: 100vh;
+}
+
+#payment .paymentCard {
+    border-radius: 55px;
+    background: linear-gradient(57deg, #8E2DE2 9.83%, rgba(74, 0, 224, 0.95) 90.17%);
+    padding: 100px 56px;
+}
+
+#payment .paymentCard p {
+    max-width: 465px;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--white);
+    text-align: center;
+    margin: 0 auto 32px;
+}
+
+#payment .paymentCard h4 {
+    background: #9F70FD;
+    text-align: center;
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px 0;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    margin-bottom: 32px;
+}
+
+#payment .paymentCard h4 span {
+    margin: 0 10px;
+}
+
+#payment .paymentCard h4 img:last-child {
+    cursor: pointer;
+}
+
+#payment .paymentCard input {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--white);
+    border: 2px solid #B6B6B6;
+    margin-bottom: 32px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#payment .paymentCard input::placeholder {
+    color: var(--white);
+}
+
+#payment .paymentCard button {
+    width: 100%;
+    color: var(--main);
+    background: var(--white);
+    padding: 10px 0;
+    font-size: 24px;
+    font-weight: 500;
+    border: none;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+}
+
+#payment .paymentCard button:hover {
+    background: #d3d3d3;
+}
+
+
+/* ============================ Payment Page CSS End ============================ */
+/* ============================ congratulation Page CSS Start ============================ */
+#congratulation {
+    display: none;
+    background: url(../assets/congratulationsBG.svg) no-repeat center;
+}
+
+#congratulation .congressMain {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#congratulation .congressMain p {
+    max-width: 648px;
+    font-size: 36px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 18px;
+    color: var(--black);
+}
+
+/* ============================ congratulation Page CSS End ============================ */
