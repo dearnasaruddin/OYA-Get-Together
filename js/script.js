@@ -15,6 +15,9 @@ let nextBtn = document.querySelector(".nextBtn")
 let joinAndGiftBtn = document.querySelector(".joinAndGiftBtn")
 let giftBtn = document.querySelector(".giftBtn")
 let submitBtn = document.querySelector(".submitBtn")
+let copyBtn = document.querySelector(".copyBtn")
+
+let bkashNumber = document.querySelector(".bkashNumber")
 
 // ============ Selecting HTML Element End ============
 
@@ -68,4 +71,8 @@ submitBtn.addEventListener("click", () => {
     paymentPage.style.display = "none"
     congratulationPage.style.display = "block"
     partyDetailsPage.style.display = "none"
+})
+copyBtn.addEventListener("click", () => {
+    let copyNumber = bkashNumber.innerHTML
+    navigator.clipboard.writeText(copyNumber)
 })
