@@ -43,6 +43,7 @@
     <!-- ======================== Font awesome pro End ======================= -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
@@ -72,7 +73,7 @@
     <section id="partyDetails">
         <div class="container">
             <div class="row">
-                <div class="col-4 d-flex flex-column justify-content-center party-text-main">
+                <div class="col-lg-4 col-12 d-flex flex-column justify-content-center party-text-main">
                     <h1 class="text-center">Party Details</h1>
                     <div class="party-content d-flex flex-wrap justify-content-between">
                         <div class="text">
@@ -101,14 +102,14 @@
     <section id="info">
         <div class="container">
             <div class="row align-items-center justify-content-center info-content">
-                <div class="col-6"><img src="./assets/infoImg.svg" alt="infoImg.svg"></div>
-                <div class="col-6">
+                <div class="col-lg-6 col-12"><img src="./assets/infoImg.svg" alt="infoImg.svg"></div>
+                <div class="col-lg-6 col-12">
                     <div class="infoBox">
                         <h2>Give Your Information</h2>
                         <input type="text" class="fullName" placeholder="Full Name">
                         <input type="email" class="emailAddress" placeholder="Email">
                         <input type="number" class="contact" placeholder="Contact Number">
-                        <textarea name="" class="address" id="" placeholder="Address"></textarea>
+                        <textarea name="" class="address" id="" placeholder="Present Address"></textarea>
                         <button class="nextBtn" type="button">Next</button>
                     </div>
                 </div>
@@ -149,8 +150,8 @@
     <section id="payment">
         <div class="container">
             <div class="paymentMain d-flex justify-content-center align-items-center">
-                <div class="row">
-                    <div class="col-6">
+                <div class="row flex-wrap-reverse">
+                    <div class="col-lg-6 col-12">
                         <div class="paymentCard">
                             <p>After send 1200tk to following Number, fill up the form</p>
                             <h4><img src="./assets/bkashLogo.svg" alt="bkashLogo.svg"><span
@@ -161,8 +162,10 @@
                             <button class="submitBtn" type="button">Submit</button>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <img src="./assets/paymentImg.svg" alt="paymentImg.svg">
+                    <div class="col-lg-6 col-12">
+                        <div class="paymentImg">
+                            <img src="./assets/paymentImg.svg" alt="paymentImg.svg">
+                        </div>
                     </div>
                 </div>
             </div>

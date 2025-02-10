@@ -1,0 +1,131 @@
+@media (max-width: 575px) {
+    .content .logo img {
+        width: 25%;
+    }
+
+    .event img {
+        width: 80%;
+    }
+
+    .content h1 {
+        font-size: 36px;
+    }
+
+    .content>p {
+        font-size: 16px;
+        margin: 12px 0;
+    }
+
+    #partyDetails {
+        background: url(../assets/banbgColor.svg) no-repeat;
+        background-size: cover;
+    }
+
+    .angleBtn {
+        width: 65px;
+        height: 65px;
+    }
+
+    .angleBtn i {
+        font-size: 30px;
+    }
+
+    .info-content {
+        text-align: center;
+    }
+
+    .info-content img {
+        width: 50%;
+    }
+
+    .infoBox {
+        padding: 20px 12px;
+        -webkit-border-radius: 26px;
+        -moz-border-radius: 26px;
+        -ms-border-radius: 26px;
+        -o-border-radius: 26px;
+        border-radius: 26px;
+    }
+
+    .infoBox h2 {
+        font-size: 26px;
+        margin-bottom: 26px;
+    }
+
+    .infoBox input {
+        font-size: 16px;
+        padding: 8px 18px;
+        margin-bottom: 8px;
+    }
+
+    .infoBox textarea {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
+    .infoBox button {
+        font-size: 18px;
+        margin-top: 8px;
+        padding: 8px 0;
+    }
+
+    .paymentImg {
+        text-align: center;
+    }
+
+    .paymentImg img {
+        width: 50%;
+    }
+
+    #payment .paymentCard {
+        border-radius: 25px;
+        padding: 28px 10px 32px;
+    }
+
+    #payment .paymentCard p {
+        font-size: 20px;
+        margin: 0px auto 20px;
+    }
+
+    #payment .paymentCard h4 {
+        padding: 8px 0;
+        margin-bottom: 20px;
+    }
+
+    #payment .paymentCard input {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    #payment .paymentCard button {
+        padding: 8px 0;
+        font-size: 20px;
+    }
+    #congratulation{
+        background-size: cover;
+    }
+    .congress{
+        text-align: center;
+    }
+    .congress img{
+        width: 75%;
+    }
+    #congratulation .congressMain p {
+        font-size: 20px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {}
