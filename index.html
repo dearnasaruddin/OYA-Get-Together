@@ -102,10 +102,10 @@
                 <div class="col-6">
                     <div class="infoBox">
                         <h2>Give Your Information</h2>
-                        <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email">
-                        <input type="number" placeholder="Contact Number">
-                        <textarea name="" id="" placeholder="Address"></textarea>
+                        <input type="text" class="fullName" placeholder="Full Name">
+                        <input type="email" class="emailAddress" placeholder="Email">
+                        <input type="number" class="contact" placeholder="Contact Number">
+                        <textarea name="" class="address" id="" placeholder="Address"></textarea>
                         <button class="nextBtn" type="button">Next</button>
                     </div>
                 </div>
@@ -140,16 +140,18 @@
     <!-- ====================== Choice Page HTML End ====================== -->
 
     <!-- ====================== Payment Page HTML Start ====================== -->
-     <section id="payment">
+    <section id="payment">
         <div class="container">
             <div class="paymentMain d-flex justify-content-center align-items-center">
                 <div class="row">
                     <div class="col-6">
                         <div class="paymentCard">
                             <p>After send 1200tk to following Number, fill up the form</p>
-                            <h4><img src="./assets/bkashLogo.svg" alt="bkashLogo.svg"><span class="bkashNumber">01712345678</span><img class="copyBtn" src="./assets/copyIcon.svg" alt="copyIcon.svg"></h4>
-                            <input type="number" placeholder="Your Bkash number">
-                            <input type="text" placeholder="Transaction ID">
+                            <h4><img src="./assets/bkashLogo.svg" alt="bkashLogo.svg"><span
+                                    class="bkashReceiverNumber">01712345678</span><img class="copyBtn"
+                                    src="./assets/copyIcon.svg" alt="copyIcon.svg"></h4>
+                            <input type="number" class="bkashNumber" placeholder="Your Bkash number">
+                            <input type="text" class="tranID" placeholder="Transaction ID">
                             <button class="submitBtn" type="button">Submit</button>
                         </div>
                     </div>
@@ -159,21 +161,168 @@
                 </div>
             </div>
         </div>
-     </section>
+    </section>
     <!-- ====================== Payment Page HTML End ====================== -->
 
     <!-- ====================== congratulation Page HTML Start ====================== -->
-     <section id="congratulation">
+    <section id="congratulation">
         <div class="congressMain">
             <div class="congress">
                 <img src="./assets/congratulations.svg" alt="congratulations.svg">
                 <p>we have received your submission. Thank you</p>
             </div>
         </div>
-     </section>
+    </section>
     <!-- ====================== congratulation Page HTML End ====================== -->
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/script.js"></script>
+
+    <!-- =========== javaScript Start =========== -->
+    <script type="module">
+
+
+        // ********************************* Custom JS Start *********************************
+
+        // ============ Selecting HTML Element Start ============
+
+        // pages
+        let homePage = document.querySelector("#home")
+        let partyDetailsPage = document.querySelector("#partyDetails")
+        let infoPage = document.querySelector("#info")
+        let choicePage = document.querySelector("#choice")
+        let paymentPage = document.querySelector("#payment")
+        let congratulationPage = document.querySelector("#congratulation")
+
+        // buttons
+        let joinBtn = document.querySelector(".joinBtn")
+        let angleBtn = document.querySelector(".angleBtn")
+        let nextBtn = document.querySelector(".nextBtn")
+        let joinAndGiftBtn = document.querySelector(".joinAndGiftBtn")
+        let giftBtn = document.querySelector(".giftBtn")
+        let submitBtn = document.querySelector(".submitBtn")
+        let copyBtn = document.querySelector(".copyBtn")
+
+        // inputs
+        let fullName = document.querySelector(".fullName")
+        let emailAddress = document.querySelector(".emailAddress")
+        let contact = document.querySelector(".contact")
+        let address = document.querySelector(".address")
+        let bkashNumber = document.querySelector(".bkashNumber")
+        let tranID = document.querySelector(".tranID")
+
+        let submittedInfo = {}
+
+        let bkashReceiverNumber = document.querySelector(".bkashReceiverNumber")
+
+        // ============ Selecting HTML Element End ============
+
+        // click eventa
+        joinBtn.addEventListener("click", () => domUpdate("partyBlock"))
+        angleBtn.addEventListener("click", () => domUpdate("infoBlock"))
+        nextBtn.addEventListener("click", () => domUpdate("paymentBlock"))
+        joinAndGiftBtn.addEventListener("click", () => domUpdate("paymentBlock"))
+        giftBtn.addEventListener("click", () => domUpdate("paymentBlock"))
+        submitBtn.addEventListener("click", () => {
+            submittedInfo.bkashNumber = bkashNumber.value
+            submittedInfo.transactionID = tranID.value
+            addData()
+        })
+
+        copyBtn.addEventListener("click", () => {
+            let copyNumber = bkashReceiverNumber.innerHTML
+            navigator.clipboard.writeText(copyNumber)
+        })
+
+
+
+
+
+        function domUpdate(type) {
+            if (type == "partyBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "none"
+                choicePage.style.display = "none"
+                paymentPage.style.display = "none"
+                congratulationPage.style.display = "none"
+                partyDetailsPage.style.display = "block"
+            } else if (type == "infoBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "block"
+                choicePage.style.display = "none"
+                paymentPage.style.display = "none"
+                congratulationPage.style.display = "none"
+                partyDetailsPage.style.display = "none"
+            } else if (type == "choiceBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "none"
+                choicePage.style.display = "block"
+                paymentPage.style.display = "none"
+                congratulationPage.style.display = "none"
+                partyDetailsPage.style.display = "none"
+            } else if (type == "paymentBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "none"
+                choicePage.style.display = "none"
+                paymentPage.style.display = "block"
+                congratulationPage.style.display = "none"
+                partyDetailsPage.style.display = "none"
+
+                submittedInfo.fullName = fullName.value
+                submittedInfo.email = emailAddress.value
+                submittedInfo.contact = contact.value
+                submittedInfo.address = address.value
+
+            } else if (type == "congratulationBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "none"
+                choicePage.style.display = "none"
+                paymentPage.style.display = "none"
+                congratulationPage.style.display = "block"
+                partyDetailsPage.style.display = "none"
+            }
+        }
+        // ********************************* Custom JS End *********************************
+
+
+
+
+
+
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBP8is1Dh5CZhJ6W83H5esDQxErI8T4Jrk",
+            authDomain: "gettogether-c52e0.firebaseapp.com",
+            projectId: "gettogether-c52e0",
+            storageBucket: "gettogether-c52e0.firebasestorage.app",
+            messagingSenderId: "464395869553",
+            appId: "1:464395869553:web:53b8858071cc8fba06aad0"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+
+        import { getDatabase, ref, get, set, update, remove } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js";
+
+        const db = getDatabase();
+
+        function addData() {
+
+            set(ref(db, 'registeredPeople/' + submittedInfo.contact), {
+                detailedInfo: submittedInfo
+
+            }).then(() => {
+                domUpdate("congratulationBlock")
+            }).catch((err) => {
+                console.log(err)
+            })
+        }
+
+
+    </script>
+  <!-- =========== javaScript End =========== -->
 </body>
 
 </html>
