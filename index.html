@@ -66,6 +66,8 @@
         </div>
     </section>
     <!-- ====================== Home Page HTML End ====================== -->
+
+
     <!-- ====================== Party Details Page HTML Start ====================== -->
     <section id="partyDetails">
         <div class="container">
@@ -94,6 +96,7 @@
     </section>
     <!-- ====================== Party Details Page HTML End ====================== -->
 
+
     <!-- ====================== Personal Info Page HTML Start ====================== -->
     <section id="info">
         <div class="container">
@@ -113,6 +116,8 @@
         </div>
     </section>
     <!-- ====================== Personal Info Page HTML End ====================== -->
+
+
     <!-- ====================== Choice Page HTML Start ====================== -->
     <section id="choice">
         <div class="container">
@@ -139,6 +144,7 @@
     </section>
     <!-- ====================== Choice Page HTML End ====================== -->
 
+
     <!-- ====================== Payment Page HTML Start ====================== -->
     <section id="payment">
         <div class="container">
@@ -164,6 +170,7 @@
     </section>
     <!-- ====================== Payment Page HTML End ====================== -->
 
+
     <!-- ====================== congratulation Page HTML Start ====================== -->
     <section id="congratulation">
         <div class="congressMain">
@@ -174,6 +181,8 @@
         </div>
     </section>
     <!-- ====================== congratulation Page HTML End ====================== -->
+
+
     <script src="./js/bootstrap.bundle.min.js"></script>
 
     <!-- =========== javaScript Start =========== -->
@@ -215,13 +224,43 @@
 
         // ============ Selecting HTML Element End ============
 
-        // click eventa
+        // click events
         joinBtn.addEventListener("click", () => domUpdate("partyBlock"))
         angleBtn.addEventListener("click", () => domUpdate("infoBlock"))
-        nextBtn.addEventListener("click", () => domUpdate("paymentBlock"))
+
+        nextBtn.addEventListener("click", () => {
+            if (fullName.value === "" || fullName.value === " ") {
+                fullName.style.borderColor = "red"
+                return
+            }
+            if (emailAddress.value === "" || emailAddress.value === " ") {
+                emailAddress.style.borderColor = "red"
+                return
+            }
+            if (contact.value === "" || contact.value === " ") {
+                contact.style.borderColor = "red"
+                return
+            }
+            if (address.value === "" || address.value === " ") {
+                address.style.borderColor = "red"
+                return
+            }
+
+            domUpdate("paymentBlock")
+        })
+
         joinAndGiftBtn.addEventListener("click", () => domUpdate("paymentBlock"))
         giftBtn.addEventListener("click", () => domUpdate("paymentBlock"))
+
         submitBtn.addEventListener("click", () => {
+            if (bkashNumber.value === "" || bkashNumber.value === " ") {
+                bkashNumber.style.borderColor = "red"
+                return
+            }
+            if (tranID.value === "" || tranID.value === " ") {
+                tranID.style.borderColor = "red"
+                return
+            }
             submittedInfo.bkashNumber = bkashNumber.value
             submittedInfo.transactionID = tranID.value
             addData()
@@ -322,7 +361,7 @@
 
 
     </script>
-  <!-- =========== javaScript End =========== -->
+    <!-- =========== javaScript End =========== -->
 </body>
 
 </html>
