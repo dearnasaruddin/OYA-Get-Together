@@ -101,8 +101,13 @@
     <!-- ====================== Personal Info Page HTML Start ====================== -->
     <section id="info">
         <div class="container">
-            <div class="row align-items-center justify-content-center info-content">
-                <div class="col-lg-6 col-12"><img src="./assets/infoImg.svg" alt="infoImg.svg"></div>
+           <div class="info-content d-flex align-items-center justify-content-center">
+            <div class="row row-gap-3">
+                <div class="col-lg-6 col-12">
+                    <div class="infoImg">
+                        <img src="./assets/infoImg.svg" alt="infoImg.svg">
+                    </div>
+                </div>
                 <div class="col-lg-6 col-12">
                     <div class="infoBox">
                         <h2>Give Your Information</h2>
@@ -114,6 +119,7 @@
                     </div>
                 </div>
             </div>
+           </div>
         </div>
     </section>
     <!-- ====================== Personal Info Page HTML End ====================== -->
@@ -237,18 +243,28 @@
                 return
             }
             if (emailAddress.value === "" || emailAddress.value === " ") {
+                fullName.style.borderColor = "#B6B6B6"
                 emailAddress.style.borderColor = "red"
                 return
             }
             if (contact.value === "" || contact.value === " ") {
+                fullName.style.borderColor = "#B6B6B6"
+                emailAddress.style.borderColor = "#B6B6B6"
                 contact.style.borderColor = "red"
                 return
             }
             if (address.value === "" || address.value === " ") {
+                fullName.style.borderColor = "#B6B6B6"
+                emailAddress.style.borderColor = "#B6B6B6"
+                contact.style.borderColor = "#B6B6B6"
                 address.style.borderColor = "red"
                 return
             }
 
+            fullName.style.borderColor = "#B6B6B6"
+            emailAddress.style.borderColor = "#B6B6B6"
+            contact.style.borderColor = "#B6B6B6"
+            address.style.borderColor = "#B6B6B6"
             domUpdate("paymentBlock")
         })
 
@@ -261,9 +277,13 @@
                 return
             }
             if (tranID.value === "" || tranID.value === " ") {
+                bkashNumber.style.borderColor = "#B6B6B6"
                 tranID.style.borderColor = "red"
                 return
             }
+
+            bkashNumber.style.borderColor = "#B6B6B6"
+            tranID.style.borderColor = "#B6B6B6"
             submittedInfo.bkashNumber = bkashNumber.value
             submittedInfo.transactionID = tranID.value
             addData()
