@@ -25,6 +25,7 @@ a{
     text-decoration: none;
     color: inherit;
     font-size: inherit;
+    font-weight: 600;
 }
 :root {
     --main: #A435F0;
@@ -159,7 +160,9 @@ body {
 #info .info-content {
     height: 100vh;
 }
-
+#info .info-content .row{
+    align-items: center;
+}
 .infoBox {
     padding: 88px 56px;
     background: linear-gradient(57deg, #8E2DE2 9.83%, rgba(74, 0, 224, 0.95) 90.17%);
