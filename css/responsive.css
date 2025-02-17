@@ -70,6 +70,19 @@
         padding: 8px 0;
     }
 
+    #registeredPeoplePage {
+        padding: 20px 0 40px;
+    }
+
+    #registeredPeoplePage>.d-flex {
+        display: block !important;
+    }
+    #registeredPeoplePage .registeredMain{
+        height: auto;
+    }
+    .registeredPeopleDiv .listCard {
+        min-height: 0;
+    }
     .paymentImg {
         text-align: center;
     }
@@ -102,22 +115,40 @@
         padding: 8px 0;
         font-size: 20px;
     }
-    #congratulation{
+
+    #congratulation {
         background-size: cover;
     }
-    .congress{
+
+    .congress {
         text-align: center;
     }
-    .congress img{
+
+    .congress img {
         width: 75%;
     }
+
     #congratulation .congressMain p {
         font-size: 20px;
     }
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) and (max-width: 767px) {
+    #registeredPeoplePage {
+        padding: 20px 0 40px;
+    }
+
+    #registeredPeoplePage>.d-flex {
+        display: block !important;
+    }
+    #registeredPeoplePage .registeredMain{
+        height: auto;
+    }
+    .registeredPeopleDiv .listCard {
+        min-height: 0;
+    }
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {}

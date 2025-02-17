@@ -245,7 +245,52 @@ body {
     background: #d3d3d3;
 }
 
+.infoBox .registeredPeoplePtag{
+    margin: 10px 10px 0 0;
+    text-align: right;
+    color: var(--deepWhite);
+}
+.infoBox .registeredPeoplePtag .registeredPeopleBtn{
+    color: var(--white);
+    cursor: pointer;
+}
 /* ============================ info Page CSS End ============================ */
+
+/* ============================ Registered People Page CSS Start ============================ */
+#registeredPeoplePage{
+    display: none;
+}
+
+.registeredMain{
+    height: 100vh;
+}
+.registeredPeopleDiv .listCard{
+    min-height: 175px;
+    border: 2px solid var(--main);
+    padding: 10px 20px;
+}
+.subHead{
+    max-width: 500px;
+    margin: 0 auto 24px;
+}
+.backBtn{
+    color: var(--white);
+    background: #9F70FD;
+    margin: 30px auto 0;
+    flex-shrink: 0;
+    -webkit-transition: all linear 0.2s;
+    -moz-transition: all linear 0.2s;
+    -ms-transition: all linear 0.2s;
+    -o-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    font-size: 22px;
+    border: none;
+    padding: 5px 20px;
+}
+.backBtn:hover {
+    background: #8755e9;
+}
+/* ============================ Registered People Page CSS End ============================ */
 
 /* ============================ Choice Page CSS Start ============================ */
 #choice {

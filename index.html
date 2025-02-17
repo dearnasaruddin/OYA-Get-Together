@@ -86,7 +86,8 @@
                         </div>
                         <div class="text">
                             <h4>Venue</h4>
-                            <p><a href="https://www.facebook.com/buffetloungedhanmondi" target="_blank">Buffet Lounge</a>, Dhanmondi, Dhaka.</p>
+                            <p><a rel="noopener" href="https://www.facebook.com/buffetloungedhanmondi" target="_blank">Buffet
+                                    Lounge</a>, Dhanmondi, Dhaka.</p>
                         </div>
                     </div>
                     <div class="angleBtn d-flex justify-content-center align-items-center"><i
@@ -101,28 +102,49 @@
     <!-- ====================== Personal Info Page HTML Start ====================== -->
     <section id="info">
         <div class="container">
-           <div class="info-content d-flex align-items-center justify-content-center">
-            <div class="row row-gap-3">
-                <div class="col-lg-6 col-12">
-                    <div class="infoImg">
-                        <img src="./assets/infoImg.svg" alt="infoImg.svg">
+            <div class="info-content d-flex align-items-center justify-content-center">
+                <div class="row row-gap-3">
+                    <div class="col-lg-6 col-12">
+                        <div class="infoImg">
+                            <img src="./assets/infoImg.svg" alt="infoImg.svg">
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-12">
-                    <div class="infoBox">
-                        <h2>Give Your Information</h2>
-                        <input type="text" class="fullName" placeholder="Full Name">
-                        <input type="email" class="emailAddress" placeholder="Email">
-                        <input type="number" class="contact" placeholder="Contact Number">
-                        <textarea name="" class="address" id="" placeholder="Present Address"></textarea>
-                        <button class="nextBtn" type="button">Next</button>
+                    <div class="col-lg-6 col-12">
+                        <div class="infoBox">
+                            <h2>Give Your Information</h2>
+                            <input type="text" class="fullName" placeholder="Full Name">
+                            <input type="email" class="emailAddress" placeholder="Email">
+                            <input type="number" class="contact" placeholder="Contact Number">
+                            <textarea name="" class="address" id="" placeholder="Present Address"></textarea>
+                            <button class="nextBtn" type="button">Next</button>
+                            <p class="registeredPeoplePtag">To see Registered People <span
+                                    class="registeredPeopleBtn">Click Here</span></p>
+                        </div>
                     </div>
                 </div>
             </div>
-           </div>
         </div>
     </section>
     <!-- ====================== Personal Info Page HTML End ====================== -->
+
+
+    <!-- ====================== Registered People Page HTML Start ====================== -->
+    <section id="registeredPeoplePage">
+        <div class="d-flex justify-content-center align-items-center registeredMain">
+            <div class="registeredContent">
+                <h1 class="text-center my-2">Registered People</h1>
+                <p class="text-center subHead">This is the list of people, who have already completed their registration
+                    for the get together party.</p>
+                <div class="container">
+                    <div class="row row-gap-4 flex-wrap registeredPeopleDiv"></div>
+                    <div class="d-flex justify-content-center align-items-center"> <button type="button" class="backBtn">Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- ====================== Registered People Page HTML End ====================== -->
 
 
     <!-- ====================== Choice Page HTML Start ====================== -->
@@ -209,6 +231,10 @@
         let choicePage = document.querySelector("#choice")
         let paymentPage = document.querySelector("#payment")
         let congratulationPage = document.querySelector("#congratulation")
+        let registeredPeoplePage = document.querySelector("#registeredPeoplePage")
+
+
+        let registeredPeopleDiv = document.querySelector(".registeredPeopleDiv")
 
         // buttons
         let joinBtn = document.querySelector(".joinBtn")
@@ -218,6 +244,8 @@
         let giftBtn = document.querySelector(".giftBtn")
         let submitBtn = document.querySelector(".submitBtn")
         let copyBtn = document.querySelector(".copyBtn")
+        let registeredPeopleBtn = document.querySelector(".registeredPeopleBtn")
+        let backBtn = document.querySelector(".backBtn")
 
         // inputs
         let fullName = document.querySelector(".fullName")
@@ -236,6 +264,11 @@
         // click events
         joinBtn.addEventListener("click", () => domUpdate("partyBlock"))
         angleBtn.addEventListener("click", () => domUpdate("infoBlock"))
+        registeredPeopleBtn.addEventListener("click", ()=> domUpdate("regBlock"))
+        backBtn.addEventListener("click", () => {
+            registeredPeoplePage.style.display = "none"
+            domUpdate("infoBlock")
+        })
 
         nextBtn.addEventListener("click", () => {
             if (fullName.value === "" || fullName.value === " ") {
@@ -313,6 +346,14 @@
                 paymentPage.style.display = "none"
                 congratulationPage.style.display = "none"
                 partyDetailsPage.style.display = "none"
+            } else if (type == "regBlock") {
+                homePage.style.display = "none"
+                infoPage.style.display = "none"
+                registeredPeoplePage.style.display = "block"
+                choicePage.style.display = "none"
+                paymentPage.style.display = "none"
+                congratulationPage.style.display = "none"
+                partyDetailsPage.style.display = "none"
             } else if (type == "choiceBlock") {
                 homePage.style.display = "none"
                 infoPage.style.display = "none"
@@ -366,7 +407,7 @@
         const app = initializeApp(firebaseConfig);
 
 
-        import { getDatabase, ref, get, set, update, remove } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js";
+        import { getDatabase, ref, child, get, set, update, remove } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js";
 
         const db = getDatabase();
 
@@ -382,6 +423,36 @@
             })
         }
 
+
+
+        let dataReadArr = []
+        function readData() {
+            const dbRef = ref(db)
+            get(child(dbRef, 'registeredPeople/')).then(snapshot => {
+                if (snapshot.exists()) {
+                    snapshot.forEach((item) => {
+                        dataReadArr.push(item.val())
+                    })
+                    dataReadArr.map((item, index) => {
+
+                        registeredPeopleDiv.innerHTML += `<div class="col-12 col-md-6 col-lg-4">
+                            <div class="listCard">
+                                <h4>${item.detailedInfo.fullName}</h4>
+                                <p>Email: ${item.detailedInfo.email}</p>
+                                <p>Contact: ${item.detailedInfo.contact}</p>
+                                <p>Address: ${item.detailedInfo.address}</p>
+                            </div>
+                            </div>`
+
+                    })
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+
+
+        }
+        readData()
 
     </script>
     <!-- =========== javaScript End =========== -->
