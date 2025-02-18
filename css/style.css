@@ -262,7 +262,7 @@ body {
 }
 
 .registeredMain{
-    height: 100vh;
+    padding: 20px 0 40px;
 }
 .registeredPeopleDiv .listCard{
     min-height: 175px;
