@@ -139,9 +139,6 @@
         padding: 20px 0 40px;
     }
 
-    #registeredPeoplePage>.d-flex {
-        display: block !important;
-    }
     #registeredPeoplePage .registeredMain{
         height: auto;
     }

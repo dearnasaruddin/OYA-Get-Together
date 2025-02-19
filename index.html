@@ -86,10 +86,11 @@
                         </div>
                         <div class="text">
                             <h4>Venue</h4>
-                            <p><a rel="noopener" href="https://www.facebook.com/buffetloungedhanmondi" target="_blank">Buffet
-                                    Lounge</a>, Dhanmondi, Dhaka.</p>
+                            <p><a rel="noopener" href="https://www.facebook.com/thebuffetempire" target="_blank">The Buffet
+                                    Empire</a>, Dhanmondi, Dhaka.</p>
                         </div>
                     </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.2523929380526!2d90.37128077056657!3d23.74601405501402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf00559ea987%3A0x83570551379c5cf!2sThe%20Buffet%20Empire!5e0!3m2!1sen!2sbd!4v1739965850457!5m2!1sen!2sbd" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <div class="angleBtn d-flex justify-content-center align-items-center"><i
                             class="fa-sharp fa-solid fa-chevron-right fa-fw"></i></div>
                 </div>
@@ -271,34 +272,37 @@
         })
 
         nextBtn.addEventListener("click", () => {
-            if (fullName.value === "" || fullName.value === " ") {
-                fullName.style.borderColor = "red"
-                return
-            }
-            if (emailAddress.value === "" || emailAddress.value === " ") {
-                fullName.style.borderColor = "#B6B6B6"
-                emailAddress.style.borderColor = "red"
-                return
-            }
-            if (contact.value === "" || contact.value === " ") {
-                fullName.style.borderColor = "#B6B6B6"
-                emailAddress.style.borderColor = "#B6B6B6"
-                contact.style.borderColor = "red"
-                return
-            }
-            if (address.value === "" || address.value === " ") {
-                fullName.style.borderColor = "#B6B6B6"
-                emailAddress.style.borderColor = "#B6B6B6"
-                contact.style.borderColor = "#B6B6B6"
-                address.style.borderColor = "red"
-                return
-            }
 
-            fullName.style.borderColor = "#B6B6B6"
-            emailAddress.style.borderColor = "#B6B6B6"
-            contact.style.borderColor = "#B6B6B6"
-            address.style.borderColor = "#B6B6B6"
-            domUpdate("paymentBlock")
+            alert("Sorry! The registration period has ended.")
+
+            // if (fullName.value === "" || fullName.value === " ") {
+            //     fullName.style.borderColor = "red"
+            //     return
+            // }
+            // if (emailAddress.value === "" || emailAddress.value === " ") {
+            //     fullName.style.borderColor = "#B6B6B6"
+            //     emailAddress.style.borderColor = "red"
+            //     return
+            // }
+            // if (contact.value === "" || contact.value === " ") {
+            //     fullName.style.borderColor = "#B6B6B6"
+            //     emailAddress.style.borderColor = "#B6B6B6"
+            //     contact.style.borderColor = "red"
+            //     return
+            // }
+            // if (address.value === "" || address.value === " ") {
+            //     fullName.style.borderColor = "#B6B6B6"
+            //     emailAddress.style.borderColor = "#B6B6B6"
+            //     contact.style.borderColor = "#B6B6B6"
+            //     address.style.borderColor = "red"
+            //     return
+            // }
+
+            // fullName.style.borderColor = "#B6B6B6"
+            // emailAddress.style.borderColor = "#B6B6B6"
+            // contact.style.borderColor = "#B6B6B6"
+            // address.style.borderColor = "#B6B6B6"
+            // domUpdate("paymentBlock")
         })
 
         joinAndGiftBtn.addEventListener("click", () => domUpdate("paymentBlock"))
